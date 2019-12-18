@@ -21,7 +21,8 @@ def has_repeating_group_of_exactly_two(number):
 
 def main(start, end):
     passwords = (password for password in range(start, end) if (has_repeating_digit(password) and is_non_decreasing(password)))
-    print("puzzle1 – non decreasing digits and at least one repeating: ", len(list(passwords)))
+    puzzle_2 = (password for password in passwords if has_repeating_group_of_exactly_two(password))
+    print("puzzle2 - has digit exactly twice: ", len(list(puzzle_2)))
 
 
 if __name__ == "__main__":
